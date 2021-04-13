@@ -1,0 +1,242 @@
+:root {
+  --main-color: #ffffff;
+  --secondary-color: #ded9d9;
+  --third-color: #9c9c9c;
+  --title-color: #161616;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+}
+
+body,
+html {
+  background-color: var(--main-color);
+  width: 100%;
+  height: 100vh;
+}
+
+main {
+  position: fixed;
+  opacity: 0;
+  transform: translateY(20px);
+  top: 16px;
+  right: 16px;
+  bottom: 16px;
+  left: 16px;
+  border: 1px solid var(--secondary-color);
+  transition: 1s;
+}
+
+.side-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 18%;
+  height: 100%;
+  border-right: 1px solid var(--secondary-color);
+}
+
+.nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10%;
+  border-bottom: 1px solid var(--secondary-color);
+  padding: 8px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  overflow: hidden;
+}
+
+ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  justify-content: space-between;
+}
+
+ul li {
+  letter-spacing: 1px;
+}
+
+.header {
+  font-size: 75%;
+  color: var(--title-color);
+}
+
+.mode {
+  font-size: 60%;
+  color: var(--third-color);
+  cursor: pointer;
+}
+
+.info {
+  position: absolute;
+  top: 10%;
+  width: 100%;
+  height: 90%;
+}
+
+.desc {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5%;
+  display: flex;
+}
+
+.title {
+  display: flex;
+  flex: 3;
+  align-items: center;
+  padding: 8px;
+}
+
+.title p {
+  width: 100%;
+  text-align: left;
+  font-size: 60%;
+  color: var(--third-color);
+  letter-spacing: 1px;
+}
+
+.counter {
+  display: flex;
+  flex: 1;
+  padding: 8px;
+}
+
+.counter p {
+  width: 100%;
+  text-align: right;
+  font-size: 60%;
+  color: var(--third-color);
+  letter-spacing: 1px;
+}
+
+.gallery {
+  position: absolute;
+  top: 0;
+  left: 18%;
+  width: 82%;
+  height: 100%;
+}
+
+.image-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  padding-bottom: 46.25%;
+  overflow: hidden;
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.5);
+  transition: background-image 0.5s, transform 1.5s ease-out;
+}
+
+.previous {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  z-index: 3;
+  cursor: none;
+}
+
+.next {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  z-index: 3;
+  cursor: none;
+}
+
+.cursor {
+  display: none;
+  pointer-events: none;
+}
+
+.cursor.right {
+  display: block;
+  position: fixed;
+  width: 0;
+  height: 0;
+  left: 0;
+  top: 0;
+  border-left: 10px solid var(--title-color);
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  z-index: 10;
+}
+
+.cursor.left {
+  display: block;
+  position: fixed;
+  width: 0;
+  height: 0;
+  left: 0;
+  top: 0;
+  border-right: 10px solid var(--title-color);
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  z-index: 10;
+}
+
+.splash {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--main-color);
+  z-index: 2;
+  display: flex;
+  padding: 2rem;
+  align-items: center;
+  justify-content: flex-end;
+  color: var(--third-color);
+}
+
+.splash.active {
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.splash-title-container {
+  width: 30%;
+  height: 20px;
+  overflow: hidden;
+}
+
+.splash-title {
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.splash-title span {
+  display: inline-block;
+  transform: translateY(20px);
+  transition: 0.3s;
+}
